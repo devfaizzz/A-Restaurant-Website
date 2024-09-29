@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thank you</title>
+    <link rel="stylesheet" href="thnk.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="nav-container">   
+         <nav class="navbar">
+        <div class="logo">
+          <img src="./proj/LOGO.jpg" alt="" />
+        </div>
+        <ul class="nav-menu">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html" target="_main">About</a></li>
+          <li><a href="message.html" target="_main">Contact</a></li>
+          <li><a href="#" id="open-reservation">Reservation</a></li>
+        </ul>
+      </nav>
+    </div>
+
+
+
+    <!--MODAL FOR RESERVATION -->
+    <div id="reservation-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Reservation Form</h2>
+        <form id="reservation-form">
+          <label for="guest-name">Name:</label>
+          <input
+            type="text"
+            id="guest-name"
+            name="guest-name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label for="guest-number">Number of Guests:</label>
+          <input
+            type="number"
+            id="guest-number"
+            name="guest-number"
+            placeholder="Enter number of guests"
+            required
+          />
+
+          <label for="booking-time">Timing:</label>
+          <input type="time" id="booking-time" name="booking-time" required />
+
+          <label for="event-type">Booking For:</label>
+          <select id="event-type" name="event-type">
+            <option value="birthday">Birthday Party</option>
+            <option value="farewell">Farewell</option>
+            <option value="kitty party">Kitty Party</option>
+            <option value="reception">Reception</option>
+            <option value="other">Other</option>
+          </select>
+
+          <input
+            type="submit"
+            value="Book Now"
+            id="book"
+            onclick="move(event)"
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="th1">
+            <h1>Thank You!</h1>
+            <div class="th2">
+                <p>Your Order Has Been Placed, Must Visit Us again <i class='bx bx-check' ></i></p>
+                <img src="bxs-dish.svg" alt="" width="16%">
+            </div>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById("reservation-modal");
+        var openReservationBtn = document.getElementById("open-reservation");
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+        var bookbtn = document.getElementById("book");
+  
+        openReservationBtn.onclick = function () {
+          modal.style.display = "flex";
+        };
+  
+        closeBtn.onclick = function () {
+          modal.style.display = "none";
+        };
+  
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+  
+        function move(event) {
+          event.preventDefault();
+          location.href = "./thnk.html";
+        }
+      </script>
+      
+</body>
+</html>

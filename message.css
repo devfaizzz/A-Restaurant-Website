@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #ff6f00;
+}
+body {
+  background-image: url(con.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+body form {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-content {
+  width: fit-content;
+  padding: 30px 40px;
+  border: 2px solid silver;
+}
+
+.form-content div:not(.submit) {
+  margin: 25px 0px;
+  border-bottom: 1px solid white;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 6px 4px;
+  color: white;
+  font-size: 16px;
+}
+
+.submit button {
+  border: none;
+  outline: none;
+  color: #000000;
+  background-color: #ff6f00;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+footer {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 18px;
+  width: 70%;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.1s ease-in-out;
+}
+
+.nav-menu a:hover {
+  color: #ff7b54;
+}
+
+/* Modal styling */
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  color: red;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: darkred;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal form label {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.modal form input,
+.modal form select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal form input[type="submit"] {
+  background-color: #ff7b54;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal form input[type="submit"]:hover {
+  background-color: #d95c2f;
+}
+footer p{
+  color: rgb(252, 93, 1);
+  background-color: rgb(0, 0, 0);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+#social{
+display: flex;
+justify-content: space-around;
+background-image: url(con.png);
+background-size: cover;
+
+}
+#social span{
+  color: aliceblue;
+  
+}
+#social span i{
+  color: aliceblue;
+  font-size: 24px;
+}
+.heading p{
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins",sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  background-image: url(con.png);
+background-size: cover;
+}
+#social span a{
+  color: aliceblue;
+  font-style: normal;
+  text-decoration: none;
+}

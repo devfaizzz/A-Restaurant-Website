@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div id="cart-summary">
+        <p>Total Quantity: <span id="total-quantity">0</span></p>
+        <button id="proceed-to-pay">Proceed to Pay</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cartItemsContainer = document.getElementById("cart-items");
+            const totalQuantitySpan = document.getElementById("total-quantity");
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let totalQuantity = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
+            } else {
+                cart.forEach((item) => {
+                    const itemDiv = document.createElement("div");
+                    itemDiv.classList.add("cart-item");
+                    itemDiv.innerHTML = `
+                        <img src="${item.imgSrc}" alt="${item.description}">
+                        <div>
+                            <p>${item.description}</p>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                    totalQuantity += item.quantity;
+                });
+
+                totalQuantitySpan.innerText = totalQuantity;
+            }
+
+            document.getElementById("proceed-to-pay").addEventListener("click", () => {
+                if (totalQuantity === 0) {
+                    alert("Cart is empty");
+                } else {
+                    alert("Proceeding to payment...");
+                    localStorage.setItem("cart", JSON.stringify([])); 
+                    location.href = "thnk.html";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
