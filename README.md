@@ -1,3 +1,6 @@
+Royal Rasoi: A Restaurant Website
+Description:
+
 Royal Rasoi is a full-stack website developed using the MERN (MongoDB, Express.js, React, Node.js) stack. This project aims to provide a seamless online experience for users to explore the menu, make reservations, and provide feedback for a fictional restaurant, "Royal Rasoi." The website incorporates essential features to enhance user engagement and streamline restaurant operations.
 
 Features:
@@ -34,11 +37,12 @@ Copy code
 # Start the server
 npm start
 
-# In a new terminal, start the client
-cd client
+# In a new terminal, start the server
+cd server
 npm start
 Contribution:
 Feel free to contribute to this project by submitting issues or pull requests.
+or feel free to connect on linkedin or instagram.
 
 License:
 This project is licensed under the MIT License.
