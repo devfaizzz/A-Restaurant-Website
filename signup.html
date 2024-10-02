@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="header">
+        <div id="logo">
+          <img src="LOGO.jpg" alt="Royal Rasoi Logo" />
+        </div>
+        <h1>ROYAL RASOI</h1>
+      </div>
+
+      <p style="text-align: center; font-size: 1.2em">
+        Experience Exquisite Taste
+      </p>
+
+      <div id="form-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Full Name"
+            required
+          /><br />
+          <input
+            type="text"
+            id="username"
+            placeholder="User Name"
+            required
+          /><br />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required
+          /><br />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          /><br /><br />
+          <input type="submit" value="Sign Up" />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const fullName = document.getElementById("fullName").value;
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+          }
+
+          const user = {
+            fullName,
+            username,
+            password,
+          };
+
+          try {
+            const response = await fetch("http://localhost:5505/signup", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(user),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              alert("Signup successful");
+              window.location.replace("./login.html");
+            } else {
+              alert(`Signup failed: ${result.message}`);
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while signing up");
+          }
+        });
+    </script>
+  </body>
+</html>

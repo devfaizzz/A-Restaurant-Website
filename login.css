@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('bkg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: dotted;
+    color: dimgray;
+    display: inline-block;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+#div {
+    text-align: center;
+    text-transform: capitalize;
+    color: dimgray;
+    padding: 40px;
+    border: 10px solid dimgray;
+    border-radius: 20px;
+    width: 300px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid dimgray;
+}
+
+input:focus {
+    border-color: #333;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: dimgray;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
